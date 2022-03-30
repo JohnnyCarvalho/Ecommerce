@@ -10,7 +10,7 @@ namespace Entities.Notifications
         public Notifies()
         { Notificacoes = new List<Notifies>(); }
 
-        [NotMapped]
+        [NotMapped]//A criação dessa tabela não deixa os itens nela serem enviados ao banco de dados.
         public String NomePropriedade { get; set; }
 
         [NotMapped]
