@@ -8,25 +8,25 @@ namespace Entities.Notifications
     public class Notifies
     {
         public Notifies()
-        { Notificacoes = new List<Notifies>(); }
-
-        [NotMapped]//A criação dessa tabela não deixa os itens nela serem enviados ao banco de dados.
-        public String NomePropriedade { get; set; }
+        { Notifications = new List<Notifies>(); }
 
         [NotMapped]
-        public String mensagem { get; set; }
+        public String NameProperty { get; set; }
 
         [NotMapped]
-        public List<Notifies> Notificacoes;
+        public String Message { get; set; }
 
-        public bool ValidaPriedadeString(string valor, String nomePropriedade)
+        [NotMapped]
+        public List<Notifies> Notifications;
+
+        public bool ValidatePropertyString(string value, String nameProperty)
         {
-            if (string.IsNullOrWhiteSpace(valor) || string.IsNullOrWhiteSpace(nomePropriedade))
+            if (string.IsNullOrWhiteSpace(value) || string.IsNullOrWhiteSpace(nameProperty))
             {
-                Notificacoes.Add(new Notifies
+                Notifications.Add(new Notifies
                 {
-                    mensagem = "Valor deve ser maior que 0.",
-                    NomePropriedade = nomePropriedade
+                    Message = "Value must be greater than 0.",
+                    NameProperty = nameProperty
                 });
                 return false;
             }
@@ -36,14 +36,14 @@ namespace Entities.Notifications
             }
         }
 
-        public bool ValidaPriedadeString(int valor, String nomePropriedade)
+        public bool ValidatePropertyString(int value, String nameProperty)
         {
-            if (valor < 1 || string.IsNullOrWhiteSpace(nomePropriedade))
+            if (value < 1 || string.IsNullOrWhiteSpace(nameProperty))
             {
-                Notificacoes.Add(new Notifies
+                Notifications.Add(new Notifies
                 {
-                    mensagem = "Valor deve ser maior que 0.", 
-                    NomePropriedade = nomePropriedade
+                    Message = "Value must be greater than 0.",
+                    NameProperty = nameProperty
                 });
                 return false;
             }
@@ -53,14 +53,14 @@ namespace Entities.Notifications
             }
         }
 
-        public bool ValidaPriedadeString(decimal valor, String nomePropriedade)
+        public bool ValidatePropertyString(decimal value, String nameProperty)
         {
-            if (valor < 1 || string.IsNullOrWhiteSpace(nomePropriedade))
+            if (value < 1 || string.IsNullOrWhiteSpace(nameProperty))
             {
-                Notificacoes.Add(new Notifies
+                Notifications.Add(new Notifies
                 {
-                    mensagem = "Valor deve ser maior que 0.",
-                    NomePropriedade = nomePropriedade
+                    Message = "Value must be greater than 0",
+                    NameProperty = nameProperty
                 });
                 return false;
             }
