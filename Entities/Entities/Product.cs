@@ -26,5 +26,6 @@ namespace Entities.Entities
         [Column("PRD_ESTADO")]
         [Display(Name = "Estado")]
         public int Estado { get; set; }
+        
     }
 }
